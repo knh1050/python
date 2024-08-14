@@ -14,17 +14,20 @@ ctr +z 엔터키 <-종료
 >>> import sys
 >>> sys.exit()
 
+
 -사칙연산
 >>> 3/2.4
 1.25
 >>> 3*9
 27
 
+
 -변수사용
 >>> a=1
 >>> b=2
 >>> a+b
 3
+
 
 -변수에 문자 대입후 출력
 >>> a="Python"
@@ -38,6 +41,7 @@ Python
 >>> print(b)
 avc
 
+
 -조건문 if (파이썬 복붙씨 드래그후 우클릭)
 >>> a=3
 >>> if a>1:
@@ -50,5 +54,33 @@ IndentationError: expected an indented block after 'if' statement on line 1
 ...     print("a는 1보다 큼") <- print 앞에 tab 넣기 or 스페이스바 4칸 (반복문 for, while에서도 같음)
 ...
 a는 1보다 큼
+
+
+
+-반복문 for 
+>>> for a in [1, 2, 3]:
+...     print(a)
+...
+1
+2
+3
+
+-반복문 whille
+>>> i=0
+>>> while i < 3:
+...     i=i+1
+...     print(i)
+...
+1
+2
+3
+
+
+- 함수 
+>>> def add(a,b):
+...     return a+b
+...
+>>> add(1,2)
+3
 
 
