@@ -1,0 +1,38 @@
+파이썬에서 문자열 만드는 방법은 4가지
+
+1. "hello"
+2. 'hello'
+3. """hello"""
+4. '''hello'''
+
+1. 문자열에 작은따옴표 포함
+"knh's food"
+
+2. 문자열에 큰따옴표 포함
+'"python easy." he says.'
+
+3. 역슬래시를 사용하여 작은따옴표와 큰따옴표 문자열에 포함
+"knh\'s food"
+"\"python easy.\" he says."
+
+
+- 줄 바꾸기
+>>> a = "life is short\nu need python"
+>>> print(a)
+life is short
+u need python
+
+4. 위의 줄 바꾸기(\n) 대체(''' ''', """ """)
+>>> a = '''life is short
+... u need py
+... '''
+>>> print(a)
+life is short
+u need py
+
+>>> a = """life is short
+... u need py
+... """
+>>> print(a)
+life is short
+u need py
