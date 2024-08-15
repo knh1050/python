@@ -1,0 +1,32 @@
+1. 숫자 바로 대입
+>>> "i eat %d apple" %2
+'i eat 2 apple'
+
+2. 문자열 대입
+>>> "i eat 2 %s" %'apple'
+'i eat 2 apple'
+
+3. 숫자 변수 대입
+>>> a=3
+>>> "i eat %d apple" %a
+'i eat 3 apple'
+
+4. 2개 이상의 값 넣기
+>>> b='apple'
+>>> a=1
+>>> "i eat %d $s" %(a, b)
+'i eat 1 apple'
+>>> "i eat %d %s" %(a, 'apple')
+'i eat 1 apple'
+
+
+- 문자열 포맷 코드
+%s - 문자열
+%c - 문자 1개
+%d - 정수
+%f - 부동소수
+%o - 8진수
+%x - 16진수
+%% -  Literal %(문자 '%')
+>>> "error is %d%%." %98
+'error is 98%.'
