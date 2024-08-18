@@ -27,3 +27,32 @@ Key: Value 쌍 모두 지우기 - clear
 >>> a.clear()
 >>> a
 {}
+
+
+Key로 Value 얻기 - get
+>>> a = {'name': 'pey', 'phone': '010-9999-1234', 'birth': '1118'}
+>>> a.get('name')
+'pey'
+>>> a.get('phone')
+'010-9999-1234'
+
+>>> a = {'name':'pey', 'phone':'010-9999-1234', 'birth': '1118'}
+>>> print(a.get('nokey'))
+None
+>>> print(a['nokey’])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'nokey'
+딕셔너리 안에 찾으려는 Key가 없을 경우, 미리 정해 둔 디폴트 값을 대신 가져오게 하려면 get(x, '디폴트 값')을 사용하면 편함
+
+>>> a.get('nokey', 'foo')
+'foo'
+딕셔너리 a에는 'nokey'에 해당하는 Key가 없다. 따라서 디폴트 값인 'foo'를 리턴한다.
+
+
+해당 Key가 딕셔너리 안에 있는지 조사하기 - in
+>>> a = {'name':'pey', 'phone':'010-9999-1234', 'birth': '1118'}
+>>> 'name' in a
+True
+>>> 'email' in a
+False
