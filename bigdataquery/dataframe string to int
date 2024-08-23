@@ -1,1 +1,7 @@
+voc에 bigdataquery 특정 string 형식의 컬럼을 비교 연산자로 범위 조건 설정해서 조회하고 싶다함.
+
+딕셔너리 형태로 값을 받음
+param = {col1 : 'aa111', col2 : 'qqqq'}
+
+그러면 bdq에서 impala로 값에 따라 sql문 변환하여 던져줌
 
