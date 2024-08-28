@@ -1,0 +1,113 @@
+>>> hit = 0
+>>> while hit < 5:
+...     hit = hit +1
+...     print('%d번 침' %hit)
+...     if hit ==5:
+...             print('dead')
+...
+1번 침
+2번 침
+3번 침
+4번 침
+5번 침
+dead
+
+----------------------------------------------------
+
+>>> prompt = """
+... 1.add
+... 2.del
+... 3.list
+... 4.quit
+...
+... enter number:"""
+>>> number = 0
+>>> while number != 4:
+...     print(prompt)
+...     number = int(input())
+...
+
+1.add
+2.del
+3.list
+4.quit
+
+enter number:
+4
+
+----------------------------------------------------
+
+>>> coffee=5
+>>> while money:
+...     print('coffee')
+...     coffee = coffee -1
+...     print('남은 커피 양 %d' % coffee)
+...     if coffee == 0:
+...             print('sold out')
+...             break
+...
+coffee
+남은 커피 양 4
+coffee
+남은 커피 양 3
+coffee
+남은 커피 양 2
+coffee
+남은 커피 양 1
+coffee
+남은 커피 양 0
+sold out
+
+----------------------------------------------------
+
+while문 강제로 빠져나가기
+
+>>> coffee = 5
+>>> while True:
+...     money = int(input("돈을 넣어 주세요: "))
+...     if money == 100:
+...         print("커피")
+...         coffee = coffee -1
+...     elif money > 100:
+...         print("거스름돈 %d 주고 커피." % (money -300))
+...         coffee = coffee -1
+...     else:
+...         print("환불")
+...         print("재고 %d" % coffee)
+...     if coffee == 0:
+...         print("sold out")
+...         break
+...
+돈을 넣어 주세요: 500
+거스름돈 200 주고 커피.
+돈을 넣어 주세요: 300
+거스름돈 0 주고 커피.
+돈을 넣어 주세요: 100
+커피
+돈을 넣어 주세요: 0
+환불
+재고 2
+돈을 넣어 주세요: 0
+환불
+재고 2
+
+----------------------------------------------------
+while문 맨 첨으로 돌아가기
+
+>>> a = 0
+>>> while a < 5:
+...     a = a + 1
+...     if a % 2 == 0: continue
+...     print(a)
+...
+1
+3
+5
+
+----------------------------------------------------
+무한 루프
+
+>>> while True:
+...     print('ctr+c ㄱㄱ')
+...
+
