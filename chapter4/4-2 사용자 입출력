@@ -1,0 +1,52 @@
+우리들이 사용하는 대부분의 완성된 프로그램은 사용자 입력에 따라 그에 맞는 출력을 내보냄.
+우리는 이미 함수 부분에서 입출력이 어떤 의미를 가지는지 알아봄 
+지금부터는 좀 더 다양한 입출력 방법에 대해서 알아보자
+
+
+사용자 입력 활용하기
+
+1. input 사용하기
+>>> a = input()
+Life is too short, you need python
+>>> a
+'Life is too short, you need python'
+
+
+2. 프롬프트를 띄워 사용자 입력받기
+>>> a = input("숫자 입력: ")
+숫자 입력: 1
+>>> print(a)
+1                    # input은 입력되는 모든 것을 문자열로 취급
+>>> type(number)
+<class 'str'>
+
+--------------------------------------------------------------------------
+
+print 자세히 알기
+
+>>> a = 123
+>>> print(a)
+123
+>>> a = "Python"
+>>> print(a)
+Python
+>>> a = [1, 2, 3]
+>>> print(a)
+[1, 2, 3]
+
+1. 큰따옴표로 둘러싸인 문자열은 + 연산과 동일
+>>> print("life" "is" "too short")
+lifeistoo short
+>>> print("life"+"is"+"too short")
+lifeistoo short
+
+2. 문자열 띄어쓰기는 쉼표
+>>> print("life", "is", "too short")
+life is too short
+
+3.한 줄에 결괏값 출력
+>>> for i in range(10):
+...     print(i, end=' ')
+...
+0 1 2 3 4 5 6 7 8 9 >>>          # end 매개변수의 초기값은 줄바꿈(\n) 문자임
+
