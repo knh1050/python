@@ -1,0 +1,39 @@
+Q1
+shirt
+
+>>> if 'wife' in a: print('wife')
+... elif 'python' in a and 'you' not in a: print('python')
+... elif 'shirt' not in a: print('shirt')
+... elif 'need' in a: print('need')
+... else: print('none')
+...
+shirt
+
+Q2
+i%3 == 0:
+
+>>> while i <= 1000:
+...     if i%3==0:
+...             result +=i
+...     i+=1
+...
+>>> i
+1001
+>>> result
+166833
+
+
+Q3
+
+
+
+Q4
+
+
+
+Q5
+
+
+
+Q6
+
