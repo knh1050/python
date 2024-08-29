@@ -1,0 +1,23 @@
+sys 모듈 사용하기
+>>> import sys
+>>> args = sys.argv[1:]
+>>> for i in args:
+...     print(i)
+...
+>>>
+
+명령 프롬프트
+C:/Users/Admin/AppData/Local/Programs/Python/Python311/doit sys1.py aaa bbb ccc
+aaa
+bbb
+ccc
+
+---------------------------------------
+
+import sys
+args = sys.argv[1:]
+for i in args:
+  print(i.upper(), end=' ')
+
+C:/Users/Admin/AppData/Local/Programs/Python/Python311/doit sys2.py life is too short, u need python
+life is too short, u need python
