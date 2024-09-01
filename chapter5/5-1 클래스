@@ -260,4 +260,63 @@ class 클래스_이름(상속할_클래스_이름)
 
 ----------------------------------------------------------
 
-메서드 오버라이
+메서드 오버라이딩 : 부모 클래스(상속한 클래스)에 있는 메서드를 동일한 이름으로 다시 만드는 것을 메서드 오버라이딩(method overriding)
+
+>>> a = FourCal(4, 0)
+>>> a.div()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+    result = self.first / self.second
+ZeroDivisionError: division by zero
+
+FourCal 클래스의 객체 a에 값 4와 0을 지정하고 div 메서드를 호출하면 4를 0으로 나누려고 하므로 ZeroDivisionError 오류가 발생한다. 
+0으로 나눌 때 오류가 아닌 값 0을 리턴받고 싶다면 어떻게 해야 할까?
+
+다음과 같이 FourCal 클래스를 상속하는 SafeFourCal 클래스를 만들어 보자.
+
+>>> class SafeFourCal(FourCal):
+...     def div(self):
+...         if self.second == 0:
+...             return 0
+...         else:
+...             return self.first / self.second
+...
+>>>
+>>> a = SafeFourCal(4, 0)
+>>> a.div()
+0
+
+----------------------------------------------------------
+
+클래스 변수
+
+>>> class Family:
+...     lastname = "김"
+...
+
+클래스변수는 클래스_이름.클래스변수로 사용할 수 있다
+>>> Family.lastname
+김
+
+객체를 이용해도 사용가능
+>>> a = Family()
+>>> b = Family()
+>>> a.lastname
+김
+>>> b.lastname
+김
+
+>>> Family.lastname = "박"
+>>> a.lastname
+박
+>>> b.lastname
+박
+
+>>> a.lastname = "최"
+>>> a.lastname
+최
+
+>>> Family.lastname
+박
+>>> b.lastname
+박
