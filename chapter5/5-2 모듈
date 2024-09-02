@@ -1,0 +1,41 @@
+모듈 : 함수나 변수 또는 클래스를 모아 놓은 파이썬 파일, 다른 파이썬 프로그램에서 불러와 사용할 수 있도록 만든 파이썬 파일
+
+
+모듈 만들기
+
+mod1.py
+def add(a, b):
+    return a + b
+
+def sub(a, b): 
+    return a-b
+
+----------------------------------------------------------------
+모듈 불러오기
+
+명령프롬프트에서 실행
+
+C:\doit>python
+Python 3.11.2 (tags/v3.11.2:878ead1, Feb  7 2023, 16:38:35) [MSC v.1934 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import mod1
+>>> print(mod1.add(3,4))
+7
+>>> print(mod1.sub(4,2))
+2
+>>>
+
+import 사용방법
+import 모듈_이름(.py 확장자를 제거한 mod1만 사용)
+
+from 모듈_이름 import 모듈_함수(함수를 직접 import하면 모듈 이름을 붙이지 않고 바로 해당 모듈의 함수 사용가능)
+>>> from mod1 import add
+>>> add(3,4)
+7
+
+from mod1 import add, sub
+쉼표(,)로 구분하여 필요한 함수를 불러옴
+
+from mod1 import * 
+mod1 모듈의 모든 함수를 불러와 사용
+
