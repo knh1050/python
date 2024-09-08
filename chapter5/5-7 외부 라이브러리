@@ -1,0 +1,86 @@
+pip
+pip install
+PyPI(python package index)는 파이썬 소프트웨어가 모인 저장 공간이다. 현재 이곳에는 10만 건 이상의 파이썬 패키지가 등록되어 있으며 이곳에 등록된 파이썬 패키지는 누구나 내려받아 사용할 수 있다. 이곳에서 직접 내려받아 설치해도 되지만, pip을 이용하면 다음과 같이 간편하게 설치할 수 있다.
+
+pip install SomePackage 
+여기서 SomePackage는 내려받을 수 있는 특정 패키지를 뜻한다.
+
+pip uninstall
+설치한 패키지를 삭제하고 싶다면 다음 명령어로 삭제할 수 있다.
+
+pip uninstall SomePackage
+특정 버전으로 설치하기
+다음과 같이 버전을 지정하여 설치할 수도 있다. 다음 명령어를 실행하면 1.0.4 버전의 SomePackage를 설치한다.
+
+pip install SomePackage==1.0.4
+다음처럼 버전을 생략하면 최신 버전을 설치한다.
+
+pip install SomePackage 
+최신 버전으로 업그레이드하기
+패키지를 최신 버전으로 업그레이드하려면 --upgrade 옵션과 함께 사용한다.
+
+pip install --upgrade SomePackage 
+설치된 패키지 확인하기
+다음 명령은 pip을 이용하여 설치한 패키지 목록을 출력한다.
+
+pip list
+다음과 같이 설치된 패키지 목록을 출력할 것이다.
+
+Package                  Version
+------------------------ --------
+amqp                     2.1.4
+anyjson                  0.3.3
+billiard                 3.3.0.23
+celery                   3.1.0
+defusedxml               0.4.1
+diff-match-patch         20121119
+(... 생략 ...)
+Faker
+
+
+-------------------------------------------------------------------------------
+
+sympy
+sympy는 방정식 기호(symbol)를 사용하게 해 주는 외부 라이브러리이다. 마찬가지로 pip을 이용하여 sympy를 설치하자.
+
+C:\> pip install sympy
+sympy 사용해 보기
+
+# sympy_test.py
+from fractions import Fraction
+import sympy
+
+# 가지고 있던 돈을 x라고 하자.
+x = sympy.symbols("x")
+
+# 가지고 있던 돈의 2/5가 1760원이므로 방정식은 x * (2/5) = 1760 이다.
+f = sympy.Eq(x*Fraction('2/5'), 1760)
+
+# 방정식을 만족하는 값(result)을 구한다.
+result = sympy.solve(f)  # 결괏값은 리스트
+
+# 남은 돈은 다음과 같이 가지고 있던 돈에서 1760원을 빼면 된다.
+remains = result[0] - 1760
+
+print('남은 돈은 {}원 입니다.'.format(remains))
+
+-------------------------------------------------------------------------------
+sympy 활용
+
+>>> import sympy
+>>> x = sympy.symbols("x")
+>>> f = sympy.Eq(x**2, 1)
+>>> sympy.solve(f)
+[-1, 1]
+또한 다음과 같은 연립방정식의 해도 구할 수 있다.
+
+
+x + y = 10
+x - y = 4
+>>> import sympy
+>>> x, y = sympy.symbols('x y')
+>>> f1 = sympy.Eq(x+y, 10)
+>>> f2 = sympy.Eq(x-y, 4)
+>>> sympy.solve([f1, f2])
+{x: 7, y: 3}
+미지수가 2개 이상이라면 결괏값이 리스트가 아닌 딕셔너리라는 것에 주의하자.
