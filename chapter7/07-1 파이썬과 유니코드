@@ -1,0 +1,60 @@
+인코딩하기
+
+>>> a = "Life is too short"
+>>> b = a.encode('utf-8')
+>>> b
+b'Life is too short'
+>>> type(b)
+<class 'bytes'>
+
+
+>>> a = "한글"
+>>> a.encode("ascii")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-1: ordinal not in range(128)
+
+
+>>> a = '한글'
+>>> a.encode('euc-kr')
+b'\xc7\xd1\xb1\xdb'
+>>> a.encode('utf-8')
+b'\xed\x95\x9c\xea\xb8\x80'
+
+------------------------------------------------------------------
+
+디코딩하기
+
+>>> a = '한글'
+>>> b = a.encode('euc-kr')
+>>> b.decode('euc-kr')
+'한글'
+
+>>> b.decode('utf-8')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xc7 in position 0: invalid continuation byte
+
+------------------------------------------------------------------
+
+입출력과 인코딩
+
+# euc_kr.py
+# 1. euc-kr로 작성된 파일 읽기
+with open('euc_kr.txt', encoding='euc-kr') as f:
+    data = f.read()  # 유니코드 문자열 
+
+# 2. unicode 문자열로 프로그램 수행하기
+data = data + "\n" + "추가 문자열"
+
+# 3. euc-kr로 수정된 문자열 저장하기
+with open('euc_kr.txt', encoding='euc-kr', mode='w') as f:
+    f.write(data)
+
+------------------------------------------------------------------
+
+소스 코드의 인코딩
+
+# -*- coding: utf-8 -*-
+
+# -*- coding: euc-kr -*-
